@@ -11,10 +11,10 @@ import {
 export default function Dashboard() {
     const [isInput, setInput] = useState()
     const [isValues, setValues] = useState([])
-    const selectNumber = (e) => {
+    const selectNumber = async  (e) => {
 
         e.preventDefault();
-        const params = getPermutations(isInput)
+        const params = await getPermutations(isInput)
         const newParams = []
         params.forEach(element => {
             const idx = newParams.findIndex((item) => item === element)
@@ -69,10 +69,10 @@ export default function Dashboard() {
                 </Grid>
 
                 {isValues.map((item, index) => (
-                    <Grid item xs={6} md={6} lg={4} key={index}>
-                        <Card>
+                    <Grid item xs={4} md={4} lg={4} key={index}>
+                        <Card sx={{m:0, p:0}}>
                             <CardActionArea>
-                                <CardContent>
+                                <CardContent sx={{m:0, pl:1, pr:1, pt:2, pb:2, display:'flex', justifyContent:'center'}}>
                                     <Typography gutterBottom variant="h5" component="div">
                                         {item}
                                     </Typography>
