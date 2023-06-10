@@ -59,7 +59,7 @@ export default function Dashboard() {
                     }}
                 >
 
-                    <TextField fullWidth label="กรอกตัวเลขที่ต้องการ" id="username" name="username" onChange={(e) => setInput(e.target.value)} />
+                    <TextField fullWidth label="กรอกตัวเลขที่ต้องการ" id="username" name="username" type='number' onChange={(e) => setInput(e.target.value)} />
                     <Button letiant="outlined" type='submit'>ค้นหา</Button>
                 </Box>
             </form>
